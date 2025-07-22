@@ -1,3 +1,6 @@
+const restoreBtn = document.getElementById('restoreBtn')
+
+const restoredItem = [];
 
 const savedUsers = JSON.parse(localStorage.getItem('users')) || [];
 
@@ -79,12 +82,30 @@ function savedToLocalStorage(users) {
 }
 
 function deleteItem(id) {
-    const savedUsers = JSON.parse(localStorage.getItem('users'));
+    const savedUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const deleteItems = savedUsers.find(user => user.id === id)
     const filterData = savedUsers.filter(user => user.id !== id);
-    renderUi(filterData)
+    restoredItem.push(deleteItems)    
     savedToLocalStorage(filterData)
+    renderUi(filterData)
+    // console.log(restoredItem)
 
 }
 
+restoreBtn.addEventListener('click', () =>{
+
+    if(restoredItem.length > 0){
+        const deleteItem = restoredItem.pop();
+        const savedUsers2 = JSON.parse(localStorage.getItem('users')) || [];
+        savedUsers2.unshift(deleteItem)
+        savedToLocalStorage(savedUsers2)
+        renderUi(savedUsers2)
+        console.log(savedUsers2)
+
+    }
+    renderUi()
+    
+
+})
 
 
