@@ -107,3 +107,38 @@ restoreBtn.addEventListener('click', () =>{
 })
 
 
+
+
+// Addeed new Users
+
+const formData = document.getElementById('newUsers');
+
+formData.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    const nameValue = e.target.name.value;
+    const usernameValue= e.target.username.value;
+    const emailValue= e.target.email.value;
+    const idValue = e.target.id.value;
+    
+    e.target.name.value = '';
+    e.target.username.value = '';
+    e.target.email.value = '';
+    e.target.id.value =  '';
+
+    //create new user object
+    const newUser = {
+        name: nameValue,
+        username: usernameValue,
+        email: emailValue,
+        id: idValue
+    }
+    
+    //Save to localStorage
+    const existingUsers = JSON.parse(localStorage.getItem('users'))
+    existingUsers.unshift(newUser)
+    savedToLocalStorage(existingUsers)
+    renderUi(existingUsers)
+
+
+});
