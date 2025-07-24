@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
 
 <head>
@@ -28,4 +28,38 @@
   <script src="script.js"></script>
 </body>
 
-</html>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌟 User Management</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body {
+  background: linear-gradient(135deg, #f0f4ff, #e6f7ff);
+}
+</style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start p-4 font-sans">
+
+  <h1 class="text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text mt-4 mb-6">
+    🌟 User Management App
+  </h1>
+
+  <div class="flex gap-4 mb-8">
+    <button id="restoreBtn" class="px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-medium rounded-full shadow-lg hover:scale-105 transition-transform">
+      🔄 Restore Last Deleted
+    </button>
+  </div>
+
+  <div id="container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl px-4">
+    <!-- User cards will be rendered here -->
+  </div>
+
+
+  <script src="script.js"></script>
+  </body>
+  </html>

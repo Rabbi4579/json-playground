@@ -100,10 +100,8 @@ restoreBtn.addEventListener('click', () =>{
         savedUsers2.unshift(deleteItem)
         savedToLocalStorage(savedUsers2)
         renderUi(savedUsers2)
-        console.log(savedUsers2)
 
     }
-    renderUi()
     
 
 })
